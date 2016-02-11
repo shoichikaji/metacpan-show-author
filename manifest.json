@@ -5,11 +5,11 @@
   "version": "0.0.1",
   "permissions": [
     "tabs",
-    "https://metacpan.org/recent/*"
+    "https://metacpan.org/recent*"
   ],
   "content_scripts": [
     {
-      "matches": ["https://metacpan.org/recent/*"],
+      "matches": ["https://metacpan.org/recent*"],
       "js": ["jquery-2.1.4.min.js", "myscript.js"],
       "run_at": "document_end"
     }
