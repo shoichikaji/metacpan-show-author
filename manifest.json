@@ -2,14 +2,20 @@
   "manifest_version": 2,
   "name": "metacpan-show-author",
   "description": "Show authors in MetaCPAN recent page",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "permissions": [
     "tabs",
-    "https://metacpan.org/recent*"
+    "https://metacpan.org/recent*",
+    "https://metacpan.org/requires/module*",
+    "https://metacpan.org/requires/distribution*"
   ],
   "content_scripts": [
     {
-      "matches": ["https://metacpan.org/recent*"],
+      "matches": [
+        "https://metacpan.org/recent*",
+        "https://metacpan.org/requires/module*",
+        "https://metacpan.org/requires/distribution*"
+      ],
       "js": ["jquery-2.1.4.min.js", "myscript.js"],
       "run_at": "document_end"
     }
