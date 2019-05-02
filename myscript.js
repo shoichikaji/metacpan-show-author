@@ -23,7 +23,15 @@
  */
 $("td.name").each(function () {
   var td = $(this);
-  var author = td.find("a").attr("title").replace(/\/.*/, "");
+
+  var a = td.find("a");
+  var author = a.attr("title").replace(/\/.*/, "");
+  var not_indexed = a.attr("href").includes(`/release/${author}/`);
+  if (not_indexed) {
+    a.css('color', '#ff0000');
+  }
+
   var next = td.next();
-  next.text(author + " - " + next.text());
+  var text = next.text();
+  next.html(`<a href="https://metacpan.org/author/${author}">${author}</a> - ${text}`);
 });
